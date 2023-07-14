@@ -9,8 +9,7 @@ import { saveGameToStorage, resetGameStorage } from './logic/storage/saveGame'
 
 import './App.css'
 
-function App() {
-
+function App () {
   const [board, setBoard] = useState(
     () => {
       const boardFromStorage = window.localStorage.getItem('board')
@@ -19,12 +18,11 @@ function App() {
 
       return Array(9).fill(null)
     }
-    
-    )
+  )
 
   const [turn, setTurn] = useState(() => {
     const turnForStorage = window.localStorage.getItem('turn')
-    return turnForStorage ?? TURNS.X
+    return turnForStorage ?? TURNS.X 
   }) 
 
   const [winner, setWinner] = useState(null)
@@ -37,8 +35,7 @@ function App() {
     resetGameStorage()
   }
 
-  function updateBoard(index) {
-
+  function updateBoard (index) {
     if (board[index]) return
 
     const newBoard = [...board]
