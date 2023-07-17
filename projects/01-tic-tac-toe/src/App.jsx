@@ -22,8 +22,8 @@ function App () {
 
   const [turn, setTurn] = useState(() => {
     const turnForStorage = window.localStorage.getItem('turn')
-    return turnForStorage ?? TURNS.X 
-  }) 
+    return turnForStorage ?? TURNS.X
+  })
 
   const [winner, setWinner] = useState(null)
 
@@ -45,7 +45,7 @@ function App () {
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
 
-     // guardar aqui partida
+    // guardar aqui partida
     saveGameToStorage({
       board: newBoard,
       turn: newTurn
@@ -58,7 +58,6 @@ function App () {
     } else if (checkEndGame(newBoard)) {
       setWinner(false)
     }
-    
   }
 
   return (
