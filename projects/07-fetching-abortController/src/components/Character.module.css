@@ -1,0 +1,21 @@
+.image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2%;
+    margin-bottom: 10px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.status {
+    color: greenyellow;
+}
+
+.type {
+    color: rgb(97, 9, 239);
+    display: inline;
+}
