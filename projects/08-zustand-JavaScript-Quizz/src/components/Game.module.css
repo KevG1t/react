@@ -1,0 +1,81 @@
+.gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: auto;
+    background-color:#414141;
+    border-radius: 5px;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.questionNavigate {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.btnNav {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    border: none;
+}
+
+.btnNav:disabled{
+   transform:scale(.5);
+   transition: .2s;
+}
+
+.question {
+    text-align: center;
+    color: rgb(250, 243, 243);
+    font-size: 1.2em;
+    font-weight: 700;
+    width: 100%;
+    height: auto;
+    background: #5f5e5e;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    padding: 15px;
+}
+
+.optionsContainer {
+    border: 1px solid #333;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.option {
+    list-style: none;
+    height: 35px;
+    border: none;
+    background: #5f5e5e;
+    border-top: 1px solid #333;
+    transition: .2s;
+}
+
+.option:hover {
+    background: #00000000;
+}
+
+.incorrect {
+    background: rgba(255, 0, 0, 0.365);
+}
+
+.correct {
+    background: rgba(32, 250, 16, 0.365);
+}
+
+.incorrect:hover {
+    background: #8204047c;
+}
+
+.correct:hover {
+    background: #07700e6c;
+}
