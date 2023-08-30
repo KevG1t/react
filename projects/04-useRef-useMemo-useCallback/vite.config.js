@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/react/tree/master/projects/04-useRef-useMemo-useCallback/'
+  base: '/Movies_Search/'
 })
