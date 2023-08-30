@@ -19,7 +19,8 @@ function App () {
       <section style={{
         display: 'flex',
         gap: '20px',
-        alignItems: 'center'
+        alignItems: 'center',
+        flexWrap: 'wrap'
       }}>
       <JavaScriptLogo/>
 

@@ -40,8 +40,8 @@ export function Game () {
                 <span>{currentQuestion + 1}/{amount}</span>
             <button disabled={currentQuestion >= amount - 1} onClick={goNexQuestion} className={styles.btnNav}> <RightArrowIcon/> </button>
             </section>
-        <section className={styles.gameContainer}>
 
+        <section className={styles.gameContainer}>
             <p className={styles.question}>{info.question}</p>
             <ul className={styles.optionsContainer}>
                 {info.options.map((option, index) => {
