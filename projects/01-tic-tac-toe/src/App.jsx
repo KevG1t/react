@@ -36,7 +36,7 @@ function App () {
   }
 
   function updateBoard (index) {
-    if (board[index]) return
+    if (board[index] || winner) return
 
     const newBoard = [...board]
     newBoard[index] = turn
@@ -54,6 +54,7 @@ function App () {
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
       setWinner(newWinner)
+      confetti()
     } else if (checkEndGame(newBoard)) {
       setWinner(false)
     }
