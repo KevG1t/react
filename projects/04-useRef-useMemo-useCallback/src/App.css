@@ -5,6 +5,7 @@
   align-items: center;
   width: 100%;
   max-width: 800px;
+  text-align: center;
 }
 
 main {
@@ -17,6 +18,13 @@ form {
   align-items: center;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sort-container {
+  display: flex;
+  gap: 20px;
 }
 
 .movies {

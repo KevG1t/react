@@ -41,8 +41,11 @@ function App () {
           <input style={{
             border: '1px solid transparent',
             borderColor: error ? 'red' : 'transparent'
-          }} onChange={handleChange} value={search} name='query' placeholder='Avengers, Star Wars, The Matrix...'/>
-          <input type="checkbox" onChange={handleSort} checked={sort}/>
+          }} autoComplete='off' onChange={handleChange} value={search} name='query' placeholder='Avengers, Star Wars, The Matrix...'/>
+         <section className='sort-container'>
+         <label for="sort" >Ordenar</label>
+          <input id='sort' type="checkbox" onChange={handleSort} checked={sort}/>
+         </section>
           <button>Buscar</button>
         </form>
         {error && <p style={{ color: 'red' }}>{error}</p>}
