@@ -56,6 +56,12 @@ export const usersSlice = createSlice({
       if (!idUserAlreadyDefined) {
         state.push(action.payload)
       }
+    },
+    userToEdit: (state, action: PayloadAction<UserWithId>) => {
+      const indexOfUser = state.findIndex(user => user.id === action.payload.id)
+      if (indexOfUser !== -1) {
+        state.splice(indexOfUser, 1, action.payload)
+      }
     }
   }
 })
@@ -64,4 +70,4 @@ export const usersSlice = createSlice({
 export default usersSlice.reducer
 
 // actions
-export const { deleteUserById, rollbackUser, addNewUser } = usersSlice.actions
+export const { deleteUserById, rollbackUser, addNewUser, userToEdit } = usersSlice.actions

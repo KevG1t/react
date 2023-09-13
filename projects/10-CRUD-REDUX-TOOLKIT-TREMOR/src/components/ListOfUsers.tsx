@@ -9,11 +9,12 @@ import {
   Title,
   Badge
 } from '@tremor/react'
+
 import { Delete, Edit } from './Icons'
 import { useAppSelector } from '../hooks/store.ts'
 import { useUserActions } from '../hooks/useUserActions.ts'
 
-export function ListOfUsers () {
+export function ListOfUsers ({ handleEdit }) {
   const users = useAppSelector((state) => state.users)
 
   const { removeUser } = useUserActions()
@@ -37,14 +38,14 @@ export function ListOfUsers () {
           <TableBody>
             {users.map((item) => (
               <TableRow key={item.name}>
-                <TableCell>{item.id}</TableCell>
+                <TableCell style={{ maxWidth: '10px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} >{item.id}</TableCell>
                 <TableCell style={{ display: 'flex', gap: '8px', alignItems: 'center' }} >
                     <img style={{ borderRadius: '50%', width: '32px', height: '32px' }} src={`http://unavatar.io/github/${item.github}`} alt={item.name} />
                      {item.name}
                 </TableCell>
                 <TableCell >{item.email}</TableCell>
-                <TableCell >
-                  <button type="button">
+                <TableCell style={{ display: 'flex', gap: '20px' }} >
+                  <button onClick={() => handleEdit(item)} type="button">
                        <Edit />
                   </button>
                   <button onClick={() => removeUser(item.id)} type="button">

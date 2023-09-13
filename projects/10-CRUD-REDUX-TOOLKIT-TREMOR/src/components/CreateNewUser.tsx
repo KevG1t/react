@@ -1,9 +1,12 @@
 import { Badge, Button, Card, TextInput, Title } from '@tremor/react'
 import { useUserActions } from '../hooks/useUserActions'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { type UserWithId } from '../store/users/slice'
 
-export function CreateNewUser () {
-  const { addUser } = useUserActions()
+type Props = UserWithId | null
+
+export const CreateNewUser: React.FC<Props> = ({ userToEdit, handleEdit }) => {
+  const { addUser, editUser } = useUserActions()
   const [result, setResult] = useState<'ok' | 'ko' | null >(null)
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,14 +23,33 @@ export function CreateNewUser () {
       return setResult('ko')
     }
 
-    addUser({ name, email, github })
+    if (userToEdit != null) {
+      editUser({ id: userToEdit.id, name, email, github })
+      handleEdit(null)
+    } else {
+      addUser({ name, email, github })
+    }
+
     setResult('ok')
     form.reset()
   }
+
+  useEffect(() => {
+    if (userToEdit != null) {
+      const form = document.querySelector('#form')
+      const inputs = form?.querySelectorAll('input')
+      inputs?.forEach(input => {
+        if (input.name === 'name') input.value = userToEdit.name
+        if (input.name === 'email') input.value = userToEdit.email
+        if (input.name === 'github') input.value = userToEdit.github
+      })
+    }
+  }, [userToEdit])
+
   return (
         <Card style={{ marginTop: '16px' }} >
             <Title>Create New User</Title>
-            <form className='' onSubmit={handleSubmit}>
+            <form id='form' className='' onSubmit={handleSubmit}>
             <TextInput name='name' placeholder='Aqui el nombre' />
             <TextInput name='email' placeholder='Aqui el email' />
             <TextInput name='github' placeholder='Aqui el usuario de github' />
