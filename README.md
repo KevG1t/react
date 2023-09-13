@@ -16,4 +16,4 @@
 | `07` | Fetching de datos con buenas practicas | [Ver](projects/07-fetching-abortController) | [...]() |
 | `08` | JavaScript Quizz con zustand | [Ver](projects/08-zustand-JavaScript-Quizz) | [Visitar](https://kevg1t.github.io/JavaScriptQuizz/) |
 | `09` | Tic Tac Toe Online con React socket.io y Node JS | [Ver](https://github.com/KevG1t/tic-tac-toe-online) | [Visitar](https://tic-tac-toe-online-nine.vercel.app/) |
-| `10` | CRUD Redux Toolkit + Tremor | [Ver](https://github.com/KevG1t/react/tree/master/projects/10-CRUD-REDUX-TOOLKIT-TREMOR) | [...]() |
+| `10` | CRUD Redux Toolkit + Tremor + TypeScript | [Ver](https://github.com/KevG1t/react/tree/master/projects/10-CRUD-REDUX-TOOLKIT-TREMOR) | [...]() |
