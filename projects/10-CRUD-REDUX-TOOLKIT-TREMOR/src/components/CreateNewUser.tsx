@@ -1,9 +1,12 @@
 import { Badge, Button, Card, TextInput, Title } from '@tremor/react'
 import { useUserActions } from '../hooks/useUserActions'
 import { useState, useEffect } from 'react'
-import { type UserWithId } from '../store/users/slice'
+import { type UserToEdit } from '../store/users/slice'
 
-type Props = UserWithId | null
+interface Props {
+  userToEdit: UserToEdit
+  handleEdit: (user: UserToEdit) => void
+}
 
 export const CreateNewUser: React.FC<Props> = ({ userToEdit, handleEdit }) => {
   const { addUser, editUser } = useUserActions()
@@ -12,7 +15,7 @@ export const CreateNewUser: React.FC<Props> = ({ userToEdit, handleEdit }) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setResult(null)
-    const form = event.target
+    const form = event.target as HTMLFormElement
     const data = new FormData(form)
 
     const name = data.get('name') as string

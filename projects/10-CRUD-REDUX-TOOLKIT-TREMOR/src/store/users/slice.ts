@@ -24,14 +24,15 @@ const DEFAULT_STATE = [
 export type UserId = string
 
 export interface User {
-    name: string;
-    email: string;
-    github: string;
+  name: string;
+  email: string;
+  github: string;
 }
 
 export interface UserWithId extends User{
-    id: UserId;
+  id: UserId;
 }
+export type UserToEdit = UserWithId | null
 
 // en la realidad esto es []
 const initialState: UserWithId[] = (() => {

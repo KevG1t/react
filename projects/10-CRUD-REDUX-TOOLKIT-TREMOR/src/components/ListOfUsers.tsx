@@ -13,8 +13,13 @@ import {
 import { Delete, Edit } from './Icons'
 import { useAppSelector } from '../hooks/store.ts'
 import { useUserActions } from '../hooks/useUserActions.ts'
+import { UserToEdit } from '../store/users/slice.ts'
 
-export function ListOfUsers ({ handleEdit }) {
+interface Props {
+  handleEdit: (user:UserToEdit) => void;
+}
+
+export const ListOfUsers: React.FC<Props> = ({ handleEdit }) => {
   const users = useAppSelector((state) => state.users)
 
   const { removeUser } = useUserActions()

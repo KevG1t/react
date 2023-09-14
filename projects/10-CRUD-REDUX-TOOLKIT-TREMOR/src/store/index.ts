@@ -11,24 +11,24 @@ const persistanceLocalStorageMiddleware: Middleware = (state) => (next) => (acti
 // ejemplo de actualizar la UI sin haber hecho la accion
 const syncWithDatabaseMiddleware: Middleware = store => next => action => {
   const { type, payload } = action
-  const prevState = store.getState()
+  const prevState = store.getState() as RootState
+
   next(action)
+
   if (type === 'users/deleteUserById') {
     const userIdToRemove = payload
     const userToRemove = prevState.users.find(user => user.id === userIdToRemove)
     fetch(`https://jsonplaceholder.typicode.com/users/${payload}`, {
       method: 'DELETE'
-    })
-      .then(res => {
-        if (!res.ok) throw new Error('Error al eliminar')
+    }).then(res => {
+      if (!res.ok) throw new Error('Error al eliminar')
 
-        toast.success('Usuario eliminado')
-      }).catch(err => {
-        toast.error('Algo salio mal')
-        if (userToRemove) {
-          store.dispatch(rollbackUser(userToRemove))
-        }
-      })
+      toast.success('Usuario eliminado')
+    }).catch(err => {
+      console.log(err)
+      toast.error('Algo salio mal')
+      if (userToRemove) store.dispatch(rollbackUser(userToRemove))
+    })
   }
 }
 export const store = configureStore({
