@@ -45,7 +45,7 @@ export const ListOfUsers: React.FC<Props> = ({ handleEdit }) => {
               <TableRow key={item.name}>
                 <TableCell style={{ maxWidth: '10px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} >{item.id}</TableCell>
                 <TableCell style={{ display: 'flex', gap: '8px', alignItems: 'center' }} >
-                    <img style={{ borderRadius: '50%', width: '32px', height: '32px' }} src={`http://unavatar.io/github/${item.github}`} alt={item.name} />
+                    <img style={{ borderRadius: '50%', width: '32px', height: '32px' }} src={`https://unavatar.io/github/${item.github}`} alt={item.name} />
                      {item.name}
                 </TableCell>
                 <TableCell >{item.email}</TableCell>
