@@ -8,7 +8,7 @@ interface Props {
   handleEdit: (user: UserToEdit) => void
 }
 
-export const CreateNewUser: React.FC<Props> = ({ userToEdit, handleEdit }) => {
+export const CreateNewUser = ({ userToEdit, handleEdit }: Props) => {
   const { addUser, editUser } = useUserActions()
   const [result, setResult] = useState<'ok' | 'ko' | null >(null)
 
