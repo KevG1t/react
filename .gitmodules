@@ -1,3 +1,24 @@
+[submodule "projects/tic-tac-toe"]
+path = projects/tic-tac-toe
+url = https://github.com/KevG1t/tic-tac-toe.git
+
+[submodule "projects/Movies_Search"]
+path = projects/Movies_Search
+url = https://github.com/KevG1t/Movies_Search.git
+
+[submodule "projects/Shopping-cart"]
+path = projects/Shopping-cart
+url = https://github.com/KevG1t/Shopping-cart.git
+
+[submodule "projects/JavaScriptQuizz"]
+path = projects/JavaScriptQuizz
+url = https://github.com/KevG1t/JavaScriptQuizz.git
+
 [submodule "projects/09-tic-tac-toe-online"]
 path = projects/09-tic-tac-toe-online
 url = https://github.com/KevG1t/tic-tac-toe-online.git
+
+[submodule "projects/10-CRUD-REDUX-TOOLKIT-TREMOR"]
+path = projects/10-CRUD-REDUX-TOOLKIT-TREMOR
+url = https://github.com/KevG1t/CRUD-Redux-Tremor-TypeScript.git
+
